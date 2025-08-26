@@ -4,19 +4,19 @@
 -- 1. Calculate a unique rank for each customer state within each country based on total payment value using the ROW_NUMBER() window function.
 -- 2. Segment the states into revenue tiers: Top 20% (Core), Middle 60% (Stable/Potential), and Bottom 20% (Low) based on their rank, enabling targeted market analysis.
 -- 3. Include the cumulative revenue percentage to understand the distribution and concentration of total payment value across states.
---
+
 -- Background:
 -- 1. Includes only orders with a status of 'delivered' to ensure that only completed transactions are counted.
 -- 2. Filters out data from before 2017 to avoid the skewed 2016 data, where most transactions were concentrated in October with very few records in September and December.
 -- 3. Aggregates total payment values by country and customer state by joining order, payment, and customer datasets.
 -- 4. Uses window functions to calculate the rank, total number of states, running total payment, and total payment for a more detailed analysis.
---
+
 -- Key Points:
 -- 1. ROW_NUMBER() generates a unique rank for each customer state ordered by descending total payment value.
 -- 2. COUNT() OVER () provides the total count of states to determine percentile boundaries for segmentation.
 -- 3. SUM() OVER (ORDER BY ...) calculates the running total of payment values to derive the cumulative payment percentage.
 -- 4. Revenue tiers are classified using CASE statements based on rank relative to the total number of states.
---
+
 -- Outcome:
 -- 1. Returns each country and state’s total payment value, rank, cumulative revenue percentage, running total payment, and assigned revenue tier.
 -- 2. Facilitates granular analysis of revenue concentration and geographic performance.
