@@ -1,4 +1,4 @@
--- Revenue Ranking and Segmentation Query Description
+-- Revenue Ranking and Segmentation Query Description 
 
 -- Purpose:
 -- 1. Calculate a unique rank for each customer state within each country based on total payment value using the ROW_NUMBER() window function.
