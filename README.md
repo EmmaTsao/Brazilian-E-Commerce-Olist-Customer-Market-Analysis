@@ -1,7 +1,7 @@
 # Brazilian E-Commerce Olist Customer & Sales Analysis
 
 ## Project Overview
-This project focuses on customer and market analysis of the Brazilian e-commerce platform Olist. It utilizes the RFM (Recency, Frequency, Monetary) model to assess customer value and categorizes states into three revenue tiers based on total payment value. Market segmentation is further refined by analyzing payment value, revenue growth rates, and trends from January 2017 to August 2018. The findings reveal customer behaviors and market status, providing actionable recommendations for business strategy.
+This project aims to analyze customer behavior and market dynamics on the Brazilian e-commerce platform Olist, supporting the development of data-driven business strategies. It uses the RFM (Recency, Frequency, Monetary) model as a reference for customer value assessment and segments markets based on payment value and revenue growth rates. The analysis covers data from January 2017 to August 2018, revealing customer insights and market trends and providing actionable recommendations for marketing and retention strategies.
 
 ## Data Source
 - Dataset from Kaggle: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data
