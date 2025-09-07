@@ -2,7 +2,7 @@
 
 -- Purpose:
 -- 1. Compare payment value with product price plus freight to validate the appropriate metric for analysis.
--- 2. Support decision-making on which amount to use in subsequent customer and sales analyses.
+-- 2. Support decision-making on which amount to use in subsequent customer and revenue analyses.
 
 -- Background information:
 -- 1. Payment value (MAX per order) reflects actual cash received, including installments or refunds.
@@ -10,12 +10,13 @@
 -- 3. Differences arise due to business practices such as discounts, refunds, installments, and promotions.
 
 -- Analytical implication:
--- 1. Payment value better reflects customer payment behavior for customer analysis.
--- 2. Product price excluding freight better reflects pure sales revenue as freight is an operational cost.
--- 3. This query serves as a data validation step, helping to select the proper metric.
--- 4. Subsequent analyses will exclusively use payment value for consistency.
+-- 1. Payment value better captures customer payment behavior, making it suitable for customer analysis.
+-- 2. Although product price excluding freight highlights pure sales revenue (as freight is an operational cost), 
+--    payment value better reflects actual revenue, considering various payment scenarios.
+-- 3. This query serves as a data validation step to help select the most appropriate metric.
+-- 4. Subsequent analyses will consistently use payment value to ensure coherence.
 
--- Note: **
+-- Note:
 -- 1. Freight is included here only to quantify its impact.
 -- 2. This query is part of validation, not the main analysis.
 -- 3. MAX(payment_value) is used to aggregate multiple payment records per order.
@@ -42,4 +43,4 @@ FROM order_payment_vs_items;
 
 -- Result interpretation:
 -- This summary quantifies how many orders have payment amounts equal to, higher than, or lower than the product price plus freight.
--- Understanding these proportions helps define which metric is more appropriate in subsequent customer and sales analyses.
+-- Understanding these proportions helps define which metric is more appropriate in subsequent customer and revenue analyses.
