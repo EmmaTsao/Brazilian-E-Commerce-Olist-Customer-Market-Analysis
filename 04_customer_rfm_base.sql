@@ -10,7 +10,7 @@
 --    Because this skewness can introduce bias, all 2016 data is excluded directly from the RFM base to ensure accurate and reliable customer metric calculations.
 -- 2. The 2018 data is incomplete, as it only includes orders from January to August; data for September through December is missing.
 --    Despite the missing months, the volume of 2018 data is substantial, so all available records for 2018 are retained for analysis.
---    Readers should be aware of these time coverage limitations. In subsequent sales analyses, for monthly-level analysis, data will be processed separately by year, and appropriate period annotations will be added in visualizations and reports to avoid misleading interpretations.
+--    Readers should be aware of these time coverage limitations. In subsequent revenue analyses, for monthly-level analysis, data will be processed separately by year, and appropriate period annotations will be added in visualizations and reports to avoid misleading interpretations.
 -- 3. Only orders with status 'delivered' are included to ensure the analysis reflects completed and valid transactions, thereby improving data accuracy and reliability.
 
 -- Key Points:
