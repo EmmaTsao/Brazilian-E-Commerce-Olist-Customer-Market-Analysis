@@ -66,8 +66,9 @@ SELECT
     SUM(CASE WHEN payment_value IS NULL OR payment_value <= 0 THEN 1 ELSE 0 END) AS value_null_or_negative
 FROM olist_order_payments_dataset;
 
-	-- 9 records with payment_value <= 0 have been confirmed as having the payment type ‘voucher’ or ‘not_defined’.
-	-- Since sales analysis is based on product and freight values (not payment data), these records do not affect the results and do not need to be excluded.
+	-- 9 records with payment_value = 0 have been confirmed as having the payment type ‘voucher’ or ‘not_defined’.
+	-- Since these 9 records have a payment_value of 0, they do not affect amount-based calculations.
+	-- Analyses involving payment_value totals will not exclude these records, while other metrics, such as transaction counts, use different calculation methods.
 
 -- olist_order_reviews_dataset
 
