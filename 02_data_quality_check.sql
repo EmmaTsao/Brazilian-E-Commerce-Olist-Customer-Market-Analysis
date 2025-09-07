@@ -5,7 +5,7 @@
 -- 2. Support decision-making on which amount to use in subsequent customer and revenue analyses.
 
 -- Background information:
--- 1. Payment value (SUM per order) reflects actual cash received, including installments or refunds.
+-- 1. Payment value (MAX per order) reflects actual cash received, including installments or refunds.
 -- 2. Product price plus freight represents the total charge to customers, including shipping fees.
 -- 3. Differences arise due to business practices such as discounts, refunds, installments, and promotions.
 
@@ -19,12 +19,12 @@
 -- Note:
 -- 1. Freight is included here only to quantify its impact.
 -- 2. This query is part of validation, not the main analysis.
--- 3. SUM(payment_value) is used to aggregate multiple payment records per order to capture the total amount paid.
+-- 3. Maximum payment per order is used, assuming it reflects the full payment amount, including installments or adjustments.
 
 WITH order_payment_vs_items AS (
 	SELECT
 		op.order_id,
-        SUM(op.payment_value) AS total_payment_value, -- Use MAX to capture full payment in case of installments
+        MAX(op.payment_value) AS total_payment_value, -- Use MAX to capture full payment in case of installments
 		SUM(oi.price + oi.freight_value) AS total_item_value
     FROM olist_order_payments_dataset op
 	JOIN olist_order_items_dataset oi USING (order_id)
